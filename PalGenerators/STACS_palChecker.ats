@@ -1,0 +1,35 @@
+NestedWordAutomaton palChecker = (
+callAlphabet = { a b },
+internalAlphabet = { c d },
+returnAlphabet = { e f },
+states = {qinit q0 q1 r q4 q5 q6 q7 qacc},
+initialStates = {qinit},
+finalStates = {qacc},
+callTransitions = {
+(qinit b q1)
+(qinit b q0)
+
+(q0 a q0)
+(q0 a q1)
+
+(q1 b q0)
+(q1 b q1)
+},
+internalTransitions = {
+(q0 c r)
+(q1 d r)
+},
+returnTransitions = {
+
+(q0 q0 e r)
+(q1 q0 e r)
+
+(q0 q1 f r)
+(q1 q1 f r)
+
+(r q0 e r)
+(r q1 f r)
+(r qinit f qacc)
+
+}
+);
